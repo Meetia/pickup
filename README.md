@@ -1,3 +1,3 @@
 Pickup
 
-Contributors: Meet
+Contributors: Meet, Bhushan, Astrid
