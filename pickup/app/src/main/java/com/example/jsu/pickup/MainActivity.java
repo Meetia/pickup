@@ -3,7 +3,6 @@ package com.example.jsu.pickup;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView input;
     private String add_key;
     private TextView add_val;
-
+    private int id = 4; //Private for testing
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -48,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref = database.getReference();
+
+        final PickupEvent pickup;
+
 
         read_btn = (Button) findViewById(R.id.read_btn);
         read_btn.setOnClickListener(new View.OnClickListener(){
@@ -81,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
         add_btn = (Button) findViewById(R.id.add_btn);
         add_btn.setOnClickListener(new View.OnClickListener(){
            public void onClick(View v){
-                add_val = (TextView) findViewById(R.id.add_val);
-               ref.child("val2").setValue(add_val.getText().toString());
+               User user = new User(5, "dukeq", "1, 3");
+               ref.child("5").setValue(user);
 
            }
         });
